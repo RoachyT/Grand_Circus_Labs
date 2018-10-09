@@ -10,8 +10,8 @@ namespace Lab_4
     {
         static void Main(string[] args)
         {
-            double length, width, area, perimeter;
-            string widthString, lengthString, rerun;
+            double length, width, area, perimeter, height, volume;
+            string widthString, lengthString, heightString, rerun;
             Boolean flag = true;
 
             Console.WriteLine("Welcome to Grand Circus' Room Detail");
@@ -26,11 +26,17 @@ namespace Lab_4
                 widthString = Console.ReadLine();
                 width = double.Parse(widthString);
 
+                Console.Write("Enter Height: ");
+                heightString = Console.ReadLine();
+                height = double.Parse(heightString);
+
                 area = length * width;
                 perimeter = (length * 2) + (width * 2);
+                volume = length * width * height;
 
                 Console.WriteLine("Area: " + area);
                 Console.WriteLine("Perimeter: " + perimeter);
+                Console.WriteLine("Volume: " + volume);
 
 
                 Console.Write("Do you wish to continue? Y/N ");
@@ -39,11 +45,11 @@ namespace Lab_4
                 if (rerun.ToLower() == "n")
                 {
                     flag = false;
-                    Console.WriteLine("Goodbye");
+
                 }
             }
             while (flag);
-
+            Console.WriteLine("Goodbye");
         }
     }
 }
